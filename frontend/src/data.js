@@ -40,7 +40,7 @@ const data = {
             image: '/images/p4.jpg',
             price: 2200,
             brand: 'sth',
-            rating: 4.0,
+            rating: 3.8,
             numReviews: 20,
             description: 'dress',
         },
