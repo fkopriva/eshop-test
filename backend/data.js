@@ -13,7 +13,7 @@ const data = {
             description: 'dress',
         },
         {
-            _id: '21',
+            _id: '2',
             name: 'Dress 2',
             category: 'dress',
             image: '/images/p2.jpg',
