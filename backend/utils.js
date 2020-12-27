@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import { reset } from 'nodemon';
 
 export const generateToken = (user) => {
     return jwt.sign({
