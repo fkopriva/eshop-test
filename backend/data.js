@@ -17,7 +17,6 @@ const data = {
     ],
     products: [
         {
-            _id: '1',
             name: 'Dress 1',
             category: 'dress',
             image: '/images/p1.jpg',
@@ -29,7 +28,6 @@ const data = {
             description: 'dress',
         },
         {
-            _id: '2',
             name: 'Dress 2',
             category: 'dress',
             image: '/images/p2.jpg',
@@ -41,7 +39,6 @@ const data = {
             description: 'dress',
         },
         {
-            _id: '3',
             name: 'Dress 3',
             category: 'dress',
             image: '/images/p3.jpg',
@@ -53,7 +50,6 @@ const data = {
             description: 'dress',
         },
         {
-            _id: '4',
             name: 'Dress 4',
             category: 'dress',
             image: '/images/p4.jpg',
