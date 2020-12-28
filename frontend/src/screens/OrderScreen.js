@@ -11,9 +11,11 @@ export default function OrderScreen(props) {
     const { order, loading, error } = orderDetails;
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(detailsOrder(orderId));
-    }, [dispatch, orderId]);
-    return loading? (
+        if(!order) {
+            dispatch(detailsOrder(orderId));
+        }
+    }, [dispatch, order, orderId]);
+    return loading ? (
         <LoadingBox></LoadingBox>
     ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
@@ -124,6 +126,7 @@ export default function OrderScreen(props) {
                                     </div>
                                 </div>
                             </li>
+                            {}
                         </ul>
                     </div>
                 </div>
