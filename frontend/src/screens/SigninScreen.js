@@ -6,7 +6,6 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
 export default function SigninScreen(props) {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -39,35 +38,44 @@ export default function SigninScreen(props) {
                 <div>
                     <label htmlFor="email">Email address</label>
                     <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Enter email" 
-                    required 
-                    onChange={e => setEmail(e.target.value)}>
+                        type="email" 
+                        id="email" 
+                        placeholder="Enter email" 
+                        required 
+                        onChange={(e) => setEmail(e.target.value)}
+                    >
                     </input>
                 </div>
                 <div>
                     <label htmlFor="password">Email address</label>
                     <input 
-                    type="password" 
-                    id="password" 
-                    placeholder="Enter password" 
-                    required 
-                    onChange={e => setPassword(e.target.value)}>
+                        type="password" 
+                        id="password" 
+                        placeholder="Enter password" 
+                        required 
+                        onChange={(e) => setPassword(e.target.value)}
+                    >
                     </input>
                 </div>
                 <div>
                     <label />
-                    <button className="primary" type="submit">Sign In</button>
+                    <button 
+                        className="primary" 
+                        type="submit"
+                    >
+                        Sign In
+                    </button>
                 </div>
                 <div>
                     <label />
                     <div>
                         New customer? {' '}
-                        <Link to={`/register?redirect=${redirect}`}>Create your account</Link>
+                        <Link to={`/register?redirect=${redirect}`}>
+                            Create your account
+                        </Link>
                     </div>
                 </div>
             </form>
         </div>
-    )
+    );
 }

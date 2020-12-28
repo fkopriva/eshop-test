@@ -44,46 +44,55 @@ export default function RegisterScreen(props) {
                 <div>
                     <label htmlFor="name">Name</label>
                     <input 
-                    type="text" 
-                    id="name" 
-                    placeholder="Enter name" 
-                    required 
-                    onChange={e => setName(e.target.value)}>
+                        type="text" 
+                        id="name" 
+                        placeholder="Enter name" 
+                        required 
+                        onChange={(e) => setName(e.target.value)}
+                    >
                     </input>
                 </div>
                 <div>
                     <label htmlFor="email">Email address</label>
                     <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Enter email" 
-                    required 
-                    onChange={e => setEmail(e.target.value)}>
+                        type="email" 
+                        id="email" 
+                        placeholder="Enter email" 
+                        required 
+                        onChange={(e) => setEmail(e.target.value)}
+                    >
                     </input>
                 </div>
                 <div>
                     <label htmlFor="password">Email address</label>
                     <input 
-                    type="password" 
-                    id="password" 
-                    placeholder="Enter password" 
-                    required 
-                    onChange={e => setPassword(e.target.value)}>
+                        type="password" 
+                        id="password" 
+                        placeholder="Enter password" 
+                        required 
+                        onChange={(e) => setPassword(e.target.value)}
+                    >
                     </input>
                 </div>
                 <div>
                     <label htmlFor="confirmPassword">Email address</label>
                     <input 
-                    type="password" 
-                    id="confirmPassword" 
-                    placeholder="Enter confirm password" 
-                    required 
-                    onChange={e => setConfirmPassword(e.target.value)}>
+                        type="password" 
+                        id="confirmPassword" 
+                        placeholder="Enter confirm password" 
+                        required 
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                    >
                     </input>
                 </div>
                 <div>
                     <label />
-                    <button className="primary" type="submit">Register</button>
+                    <button 
+                        className="primary" 
+                        type="submit"
+                    >
+                        Register
+                    </button>
                 </div>
                 <div>
                     <label />

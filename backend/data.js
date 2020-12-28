@@ -60,6 +60,7 @@ const data = {
             numReviews: 20,
             description: 'dress',
         },
-    ]
-}
+    ],
+};
+
 export default data;

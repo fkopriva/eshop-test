@@ -4,9 +4,9 @@ import { saveShippingAddress } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function ShippingAddressScreen(props) {
-    const userSignin = useSelector(state => state.userSignin);
+    const userSignin = useSelector((state) => state.userSignin);
     const { userInfo } = userSignin;
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector((state) => state.cart);
     const { shippingAddress } = cart;
     if (!userInfo) {
         props.history.push('/signin');
@@ -19,15 +19,17 @@ export default function ShippingAddressScreen(props) {
     const dispatch = useDispatch();
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(saveShippingAddress({
-            fullName,
-            address,
-            city,
-            postalCode,
-            country,
-        }));
+        dispatch(
+            saveShippingAddress({
+                fullName,
+                address,
+                city,
+                postalCode,
+                country,
+            })
+        );
         props.history.push('/payment');
-    }
+    };
     return (
         <div>
             <CheckoutSteps step1 step2></CheckoutSteps>
@@ -45,6 +47,8 @@ export default function ShippingAddressScreen(props) {
                         onChange={(e) => setFullName(e.target.value)}
                         required
                     ></input>
+                </div>
+                <div>
                     <label htmlFor="address">Address</label>
                     <input
                         type="text"
@@ -54,6 +58,8 @@ export default function ShippingAddressScreen(props) {
                         onChange={(e) => setAddress(e.target.value)}
                         required
                     ></input>
+                </div>
+                <div>    
                     <label htmlFor="city">City</label>
                     <input
                         type="text"
@@ -63,6 +69,8 @@ export default function ShippingAddressScreen(props) {
                         onChange={(e) => setCity(e.target.value)}
                         required
                     ></input>
+                </div>
+                <div>    
                     <label htmlFor="postalCode">Postal Code</label>
                     <input
                         type="text"
@@ -72,6 +80,8 @@ export default function ShippingAddressScreen(props) {
                         onChange={(e) => setPostalCode(e.target.value)}
                         required
                     ></input>
+                </div>
+                <div>    
                     <label htmlFor="country">Country</label>
                     <input
                         type="text"

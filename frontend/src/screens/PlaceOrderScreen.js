@@ -8,11 +8,11 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
 export default function PlaceOrderScreen(props) {
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector((state) => state.cart);
     if(!cart.paymentMethod) {
         props.history.push('/payment');
     }
-    const orderCreate = useSelector(state => state.orderCreate);
+    const orderCreate = useSelector((state) => state.orderCreate);
     const { loading, success, error, order } = orderCreate;
     const toPrice = (num) => Number(num.toFixed(2)); //5.123 => "5.12" => 5.12
     cart.itemsPrice = toPrice(
@@ -28,7 +28,7 @@ export default function PlaceOrderScreen(props) {
     useEffect(() => {
         if(success) {
             props.history.push(`/order/${order._id}`);
-            dispatch({type: ORDER_CREATE_RESET});
+            dispatch({ type: ORDER_CREATE_RESET });
         }
     }, [dispatch, order, props.history, success]);
     return (
@@ -60,24 +60,27 @@ export default function PlaceOrderScreen(props) {
                             <div className="card card-body">
                                 <h2>Order Items</h2>
                                 <ul>
-                                    {
-                                        cart.cartItems.map((item) => (
-                                            <li key={item.product}>
-                                                <div className="row">
-                                                    <div>
-                                                        <img 
+                                    {cart.cartItems.map((item) => (
+                                        <li key={item.product}>
+                                            <div className="row">
+                                                <div>
+                                                    <img 
                                                         src={item.image}
-                                                            alt={item.name}
-                                                            className="small"></img>
-                                                    </div>
-                                                    <div className="min-30">
-                                                        <Link to={`/product/${item.product}`}>{item.name}</Link>
-                                                    </div>
-                                                    <div>{item.qty} x {item.price} CZK = {item.qty * item.price} CZK</div>
+                                                        alt={item.name}
+                                                        className="small"
+                                                    ></img>
                                                 </div>
-                                            </li>
-                                        ))
-                                    }
+                                                <div className="min-30">
+                                                    <Link to={`/product/${item.product}`}>
+                                                        {item.name}
+                                                    </Link>
+                                                </div>
+                                                <div>
+                                                    {item.qty} x {item.price} CZK = {item.qty * item.price} CZK
+                                                </div>
+                                            </div>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </li>
@@ -134,5 +137,5 @@ export default function PlaceOrderScreen(props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
