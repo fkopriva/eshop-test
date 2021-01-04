@@ -14,6 +14,12 @@ const data = {
             password: bcrypt.hashSync('1234', 8),
             isAdmin: false,
         },
+        {
+            name: 'Pavla',
+            email: 'pavlinka.cermak@centrum.cz',
+            password: bcrypt.hashSync('admin', 8),
+            isAdmin: true,
+        },
     ],
     products: [
         {
@@ -30,7 +36,7 @@ const data = {
         {
             name: 'Dress 2',
             category: 'dress',
-            image: '/images/p2.jpg',
+            image: '/images/p1.jpg',
             price: 2500,
             countInStock: 5,
             brand: 'sth',
@@ -41,7 +47,7 @@ const data = {
         {
             name: 'Dress 3',
             category: 'dress',
-            image: '/images/p3.jpg',
+            image: '/images/p1.jpg',
             price: 2300,
             countInStock: 0,
             brand: 'sth',
@@ -52,7 +58,7 @@ const data = {
         {
             name: 'Dress 4',
             category: 'dress',
-            image: '/images/p4.jpg',
+            image: '/images/p1.jpg',
             price: 2200,
             countInStock: 12,
             brand: 'sth',
